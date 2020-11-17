@@ -23,12 +23,12 @@ docker pull ...
 Mount the docker:
 
 ```
-export PDKPATH=<the location where the pdk resides>
+export PDK_ROOT=<the location where the pdk resides>
 export TARGET_DIR=<the location where the target design residees>
 docker run -it -v $TARGET_DIR:$TARGET_DIR \
-    -v $PDKPATH:$PDKPATH \
+    -v $PDK_ROOT:$PDK_ROOT \
     -e TARGET_DIR=$TARGET_DIR \
-    -e PDKPATH=$PDKPATH \
+    -e PDK_ROOT=$PDK_ROOT \
     -u $(id -u $USER):$(id -g $USER) \
     efabless/drc_magic:latest
 ```

@@ -17,7 +17,6 @@
 
 #export TARGET_DIR=$1 I'm assuming TARGET_DIR is already exported
 export DESIGN_NAME=$1
-#export PDKPATH=$3 I'm Assuming PDKPATH is already exported
 export PDK=$2
 export TARGET_TYPE=$3
 export OUT_DIR=${4:-$TARGET_DIR/drc_checks}
@@ -27,7 +26,8 @@ then
     mkdir $OUT_DIR
 fi
 echo "Running Magic..."
-export MAGIC_MAGICRC=$PDKPATH/$PDK/libs.tech/magic/sky130A.magicrc
+export PDKPATH=$PDK_ROOT/$PDK #I'm Assuming PDK_ROOT is already exported
+export MAGIC_MAGICRC=$PDKPATH/libs.tech/magic/sky130A.magicrc
 
 magic \
     -noconsole \
