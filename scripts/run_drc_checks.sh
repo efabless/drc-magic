@@ -33,7 +33,7 @@ magic \
     -noconsole \
     -dnull \
     -rcfile $MAGIC_MAGICRC \
-    /usr/local/bin/scripts/magic_drc_check.tcl \
+    /usr/local/bin/magic_drc_check.tcl \
     </dev/null \
     |& tee $OUT_DIR/magic_drc.log
 

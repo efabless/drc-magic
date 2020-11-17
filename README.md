@@ -25,8 +25,8 @@ Mount the docker:
 ```
 export PDKPATH=<the location where the pdk resides>
 export TARGET_DIR=<the location where the target design residees>
-docker run -it -v $TARGET_DIR=$TARGET_DIR \
-    -v $PDKPATH=$PDKPATH \
+docker run -it -v $TARGET_DIR:$TARGET_DIR \
+    -v $PDKPATH:$PDKPATH \
     -e TARGET_DIR=$TARGET_DIR \
     -e PDKPATH=$PDKPATH \
     -u $(id -u $USER):$(id -g $USER) \
